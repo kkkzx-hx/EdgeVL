@@ -1,0 +1,16 @@
+# 模型文件（体积巨大，禁止上传）
+models/
+*.rkllm
+*.rknn
+
+# 大文件传输临时分块
+chunks/
+
+# 编译中间产物
+build/
+*.o
+*.obj
+*.a
+
+# 系统文件
+.DS_Store
