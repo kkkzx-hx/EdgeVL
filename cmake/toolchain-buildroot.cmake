@@ -6,7 +6,7 @@ set(CMAKE_SYSTEM_NAME Linux)
 set(CMAKE_SYSTEM_PROCESSOR aarch64)
 
 # 2. 指定工具链的根路径
-set(TOOLCHAIN_ROOT "/home/lhx/toolchains/buildroot-gcc13.3")
+set(TOOLCHAIN_ROOT "/home/<用户名>/toolchains/buildroot-gcc13.3")
 set(TOOLCHAIN_BIN "${TOOLCHAIN_ROOT}/bin")
 
 # 3. 指定编译器

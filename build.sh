@@ -17,7 +17,7 @@ TOOLCHAIN_FILE="cmake/toolchain-buildroot.cmake"
 PROJECT_ROOT="$(cd "$(dirname "$0")" && pwd)"
 
 # 工具链路径
-TOOLCHAIN_DIR="/home/lhx/toolchains/buildroot-gcc13.3"
+TOOLCHAIN_DIR="/home/<用户名>/toolchains/buildroot-gcc13.3"
 
 # 将工具链 bin 加入 PATH（提供 cmake / make / 交叉编译器）
 export PATH="${TOOLCHAIN_DIR}/bin:${PATH}"

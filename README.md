@@ -22,7 +22,7 @@
 | **电脑RAM** | 16GB |
 | **WSL** | Ubuntu 24.04 (WSL2) |
 | **交叉编译器** | `aarch64-linux-gnu-g++` (Ubuntu apt) |
-| **工具链** | buildroot-gcc13.3 (位于 `/home/lhx/toolchains/`) |
+| **工具链** | buildroot-gcc13.3 (位于 `/home/<用户名>/toolchains/`) |
 
 ---
 
@@ -30,7 +30,7 @@
 
 ### 项目位置
 ```
-\\wsl.localhost\Ubuntu-24.04\home\lhx\rk3588_nfs\qwen_vl\
+\\wsl.localhost\Ubuntu-24.04\home\<用户名>\rk3588_nfs\qwen_vl\
 ```
 放在挂载的目录下面
 
@@ -144,7 +144,7 @@ sudo apt install gcc-aarch64-linux-gnu g++-aarch64-linux-gnu libopencv-dev -y
 
 ### 编译命令
 ```bash
-cd /home/lhx/rk3588_nfs/qwen_vl
+cd /home/<用户名>/rk3588_nfs/qwen_vl
 aarch64-linux-gnu-g++ -std=c++17 -O3 \
   -I include -I /usr/include/opencv4 \
   src/main.cpp src/RK35llm.cpp \
@@ -168,8 +168,8 @@ RK3588 板子 NFS/SCP 传输大文件(>2GB)会断开，解决方案：
 **① WSL 端拆分**
 ```bash
 cd /mnt/e/1
-mkdir -p /home/lhx/rk3588_nfs/chunks/
-split -b 200M 大文件.rkllm /home/lhx/rk3588_nfs/chunks/llm_
+mkdir -p /home/<用户名>/rk3588_nfs/chunks/
+split -b 200M 大文件.rkllm /home/<用户名>/rk3588_nfs/chunks/llm_
 ```
 
 **② 板子端合并**

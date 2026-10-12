@@ -16,7 +16,7 @@
 ## 报错一：access denied
 
 ```
-mount.nfs: access denied by server while mounting 192.168.1.x:/home/lhx/rk3588_nfs
+mount.nfs: access denied by server while mounting 192.168.1.x:/home/<用户名>/rk3588_nfs
 ```
 
 ### 原因
@@ -28,7 +28,7 @@ mount.nfs: access denied by server while mounting 192.168.1.x:/home/lhx/rk3588_n
 把 exports 中的 IP 限制改为 `*`（允许所有来源）：
 
 ```bash
-echo "/home/lhx/rk3588_nfs *(rw,sync,no_subtree_check,no_root_squash,insecure)" | sudo tee /etc/exports
+echo "/home/<用户名>/rk3588_nfs *(rw,sync,no_subtree_check,no_root_squash,insecure)" | sudo tee /etc/exports
 sudo exportfs -ra
 sudo service nfs-kernel-server restart
 ```
@@ -38,7 +38,7 @@ sudo service nfs-kernel-server restart
 ## 报错二：Connection refused
 
 ```
-mount.nfs: Connection refused for 192.168.1.x:/home/lhx/rk3588_nfs on /mnt
+mount.nfs: Connection refused for 192.168.1.x:/home/<用户名>/rk3588_nfs on /mnt
 ```
 
 ### 原因
@@ -67,7 +67,7 @@ sudo chmod 755 /var/lib/nfs/
 sudo rm -f /var/lib/nfs/.etab.lock /var/lib/nfs/etab /var/lib/nfs/xtab /var/lib/nfs/rmtab
 
 # 重新配置并导出
-echo "/home/lhx/rk3588_nfs *(rw,sync,no_subtree_check,no_root_squash,insecure)" | sudo tee /etc/exports
+echo "/home/<用户名>/rk3588_nfs *(rw,sync,no_subtree_check,no_root_squash,insecure)" | sudo tee /etc/exports
 sudo exportfs -ra
 sudo service rpcbind restart
 sudo service nfs-kernel-server restart
@@ -150,7 +150,7 @@ powershell -File E:\1\fix_nfs_portproxy.ps1
 ## 板子挂载命令
 
 ```bash
-mount -t nfs -o nolock,nfsvers=3 192.168.1.x:/home/lhx/rk3588_nfs /mnt
+mount -t nfs -o nolock,nfsvers=3 192.168.1.x:/home/<用户名>/rk3588_nfs /mnt
 ls /mnt/   # 验证
 ```
 
